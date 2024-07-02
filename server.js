@@ -1,4 +1,5 @@
 const pg = require("pg");
+const qq = require("./db/queries.js");
 
 const { Pool } = pg;
 const pool = new Pool({
@@ -10,9 +11,8 @@ const pool = new Pool({
 });
 
 async function simpleQuery() {
-  
-  const selectAllEmployees = "select * from public.employee";
-  const result = await pool.query(selectAllEmployees);
+  const result = await pool.query(qq.ALL_EMPLOYEES);
   console.log(result.rows);
 }
+
 simpleQuery();
