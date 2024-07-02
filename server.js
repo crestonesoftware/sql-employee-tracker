@@ -1,5 +1,6 @@
 const pg = require("pg");
 const qq = require("./db/queries.js");
+const CLI = require("./lib/interactions.js");
 
 const { Pool } = pg;
 const pool = new Pool({
@@ -11,20 +12,12 @@ const pool = new Pool({
 });
 
 async function simpleQuery() {
-  const new_role_id = 30;
-  const employee_id = 24;
-
   let result = await pool.query(qq.ALL_EMPLOYEES);
-  console.log(result.rows);
-
-  //const qstr = `;
-  result = await pool.query(qq.UPDATE_EMPLOYEE_ROLE, [
-    new_role_id,
-    employee_id,
-  ]);
-  console.log(result.rows);
-  result = await pool.query(qq.ALL_EMPLOYEES);
   console.log(result.rows);
 }
 
-simpleQuery();
+function init() {
+  CLI.promptUser();
+}
+
+init();
