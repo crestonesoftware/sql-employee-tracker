@@ -19,10 +19,18 @@ INSERT INTO role (title, salary, department_id) VALUES
     ('Marketing Manager', 115000, (select id from department where name = 'Marketing')),
     ('Financial Analyst', 90000, (select id from department where name = 'Finance')),
     ('Operations Manager', 85000, (select id from department where name = 'Operations'));
+
+-- managers first so that employees can find the FK values
 INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES
     ('Gabby', 'Horton', (select id from role where title = 'Software Engineering Manager'), null),
+    ('Emily', 'Brown', (select id from role where title = 'Marketing Manager'), null),
+    ('Alex', 'Lee', (select id from role where title = 'Operations Manager'), null);
+
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES
     ('John', 'Doe', (select id from role where title = 'Software Engineer II'), (select id from employee where first_name = 'Gabby')),
     ('Jane', 'Smith', (select id from role where title = 'Software Engineer III'), (select id from employee where first_name = 'Gabby')),
-    ('Emily', 'Brown', (select id from role where title = 'Marketing Manager'), null),
-    ('Michael', 'Johnson', (select id from role where title = 'Marketing Specialist'), (select id from employee where first_name = 'Emily')),
-    ('Alex', 'Lee', (select id from role where title = 'Operations Manager'), null);
+    ('Michael', 'Johnson', (select id from role where title = 'Marketing Specialist'), (select id from employee where first_name = 'Emily'));
+
+select * from employee;
+
+
