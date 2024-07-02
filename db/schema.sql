@@ -1,3 +1,6 @@
+DROP DATABASE IF EXISTS oliver;
+create database oliver;
+
 drop table if exists employee;
 drop table if exists role;
 drop table if exists department;
