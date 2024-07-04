@@ -5,6 +5,8 @@ The Employ-o-matic HR System (EHS) provides a streamlined, command-line interfac
 
 Project Repo [on Github](https://github.com/crestonesoftware/sql-employee-tracker/pulls)
 
+Demonstration Video [here](https://youtu.be/pGZghEFLcGk)
+
 ## <a name="Table of Contents"></a>Table of Contents
 - [Description](#Description)
 - [Installation](#Installation)
