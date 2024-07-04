@@ -1,5 +1,7 @@
-DROP DATABASE IF EXISTS oliver;
-create database oliver;
+DROP DATABASE IF EXISTS emp_o_matic;
+create database emp_o_matic;
+
+\c emp_o_matic;
 
 drop table if exists employee;
 drop table if exists role;
